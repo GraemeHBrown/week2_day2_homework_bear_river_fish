@@ -29,10 +29,19 @@ def test_add_fish()
   assert_equal(true, @hudson.fish().include?(fish_to_add))
 end
 
-def test_remove_fish()
+def test_remove_fish__removes_fish()
   fish_to_remove = @carp
   @hudson.remove_fish(fish_to_remove)
   assert_equal(false, @hudson.fish().include?(fish_to_remove))
+  assert_equal(true, @hudson.fish().include?(@trout))
+end
+
+def test_remove_fish__reduces_fish_count()
+  fish_count_before = @hudson.fish.count()
+  fish_to_remove = @carp
+  @hudson.remove_fish(fish_to_remove)
+  fish_count_after = @hudson.fish.count()
+  assert_equal(fish_count_before-1, fish_count_after)
 end
 
 end
