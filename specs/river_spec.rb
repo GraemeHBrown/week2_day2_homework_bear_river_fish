@@ -8,6 +8,7 @@ class TestRiver < MiniTest::Test
   def setup
     @carp = Fish.new('Carp')
     @trout = Fish.new('Trout')
+    @perch = Fish.new('Perch')
     fish = [@carp, @trout]
     @hudson = River.new('Hudson', fish)
   end
@@ -23,11 +24,15 @@ def test_get_fish()
 end
 
 def test_add_fish()
-  fish_to_add = 'Perch'
+  fish_to_add = @perch
   @hudson.add_fish(fish_to_add)
   assert_equal(true, @hudson.fish().include?(fish_to_add))
 end
 
-#need remove fish method
+def test_remove_fish()
+  fish_to_remove = @carp
+  @hudson.remove_fish(fish_to_remove)
+  assert_equal(false, @hudson.fish().include?(fish_to_remove))
+end
 
 end
