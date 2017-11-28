@@ -42,4 +42,13 @@ class TestBear < MiniTest::Test
     assert_equal('Roar!!', @bear.roar())
   end
 
+  def test_food_count()
+    food_count_before_fishing = @bear.food_count()
+    fish_to_be_caught = @colorado.fish[0]
+    river_being_fished = @colorado
+    @bear.fishing(fish_to_be_caught, river_being_fished)
+    food_count_after_fishing = @bear.food_count()
+    assert_equal(food_count_before_fishing+1, food_count_after_fishing)
+  end
+
 end

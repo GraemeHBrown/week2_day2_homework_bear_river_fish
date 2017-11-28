@@ -16,4 +16,8 @@ class Bear
     return "Roar!!"
   end
 
+  def food_count()
+    return @stomach.count()
+  end
+
 end
