@@ -16,4 +16,9 @@ class TestBear < MiniTest::Test
     assert_equal(expected, @bear.name())
   end
 
+  def test_empty_stomach()
+    expected = 0
+    assert_equal(expected, @bear.stomach.size())
+  end
+
 end
