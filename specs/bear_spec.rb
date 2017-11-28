@@ -38,4 +38,8 @@ class TestBear < MiniTest::Test
     assert_equal(false, river_being_fished.fish.include?(fish_to_be_caught))
   end
 
+  def test_roar()
+    assert_equal('Roar!!', @bear.roar())
+  end
+
 end

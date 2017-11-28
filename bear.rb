@@ -12,4 +12,8 @@ class Bear
     river.remove_fish(fish)
   end
 
+  def roar()
+    return "Roar!!"
+  end
+
 end
