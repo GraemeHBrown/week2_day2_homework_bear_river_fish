@@ -19,4 +19,10 @@ def test_get_fish()
   assert_equal(expected, @hudson.fish())
 end
 
+def test_add_fish()
+  fish_to_add = 'Perch'
+  @hudson.add_fish(fish_to_add)
+  assert_equal(true, @hudson.fish().include?(fish_to_add))
+end
+
 end
